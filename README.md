@@ -117,12 +117,15 @@ Les employés les plus susceptibles de quitter l’entreprise sont :
 Le projet évoluera vers l’implémentation de modèles de **Machine Learning**, répartis en trois axes :
 
 ### 🔹 Classification – Prédiction de l’Attrition
-- Régression Logistique
-- Random Forest
-- Support Vector Machine (SVM)
-- K-Nearest Neighbors (K-NN)
-
+        **Aprentissage supervisé**
+K-NN (K-Nearest Neighbors)
+Naïve Bayes
+Decision Tree (Arbre de décision)
+Random Forest
+SVM (Support Vector Machine)
+Régression Logistique
 ### 🔹 Clustering – Segmentation des Employés
+        **Apprentissage non supervisé**
 - K-Means
 - Clustering Hiérarchique
 
@@ -130,6 +133,8 @@ Le projet évoluera vers l’implémentation de modèles de **Machine Learning**
 - Régression Linéaire
 - Séries Temporelles (ARIMA)
 
+### 🔹 Association
+- Apriori
 ---
 
 
