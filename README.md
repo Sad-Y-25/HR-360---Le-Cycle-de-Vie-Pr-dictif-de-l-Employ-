@@ -130,7 +130,7 @@ Régression Logistique
 - Clustering Hiérarchique
 
 ### 🔹 Régression – Prédiction du Salaire
-- Régression Linéaire
+- Régression Linéaire Simple et multiple
 - Séries Temporelles (ARIMA)
 
 ### 🔹 Association
