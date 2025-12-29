@@ -1,140 +1,67 @@
-# 📊 HR Analytics : Analyse et Prédiction de l'Attrition des Employés
+# 📊 HR Analytics : Analyse, Prédiction et Stratégie RH
 
-Ce projet vise à analyser les données des ressources humaines afin de comprendre les facteurs influençant le départ des employés (**Attrition**) et de visualiser les tendances salariales et démographiques au sein de l'entreprise.
-
-La méthodologie adoptée repose sur une approche rigoureuse de **structuration des données**, d’**exploration visuelle (EDA)** et de **préparation à la modélisation prédictive**.
+Ce projet vise à transformer les données brutes des ressources humaines en outils d'aide à la décision. Il combine l'analyse exploratoire, la prédiction de salaire par Machine Learning et l'étude des facteurs de satisfaction via l'analyse d'association.
 
 ---
 
-## 📂 Structure du Projet
+## 🚀 État d’Avancement du Projet (Mis à jour)
 
-Le projet est organisé en plusieurs phases :
+### ✅ Phase 1 : Structuration & EDA
+* Nettoyage complet du dataset (1470 employés, 35 variables).
+* Analyse visuelle des corrélations (Impact du `JobLevel` et de l'expérience sur le revenu).
 
-1. **Structuration & Nettoyage des Données**
-2. **Analyse Exploratoire & Visualisation (EDA)**
-3. **Modélisation Prédictive (à venir)**
+### ✅ Phase 2 : Modélisation Prédictive (Régression)
+Nous avons implémenté et comparé deux approches pour l'estimation des salaires :
 
----
+* **Régression Linéaire Simple :** Modèle de base (Expérience uniquement). 
+    * *Résultat :* MAPE ~40%, R² ~0.49. (Insuffisant pour la production).
+* **Régression Linéaire Multiple :** Modèle avancé (Expérience, Poste, Département).
+    * *Résultat :* **MAPE ~20%, R² ~0.87**. Ce modèle est retenu pour l'interface finale.
 
-## 🛠️ Installation et Prérequis
+### ✅ Phase 3 : Analyse de Tendance (ARIMA)
+* Transformation du dataset en série temporelle pour analyser l'évolution du salaire moyen.
+* **Précision :** MAPE de **10.79%**. 
+* **Usage :** Projection de la masse salariale et trajectoires de carrière à long terme.
 
-Assurez-vous d’avoir **Python 3.x** installé, puis installez les bibliothèques nécessaires :
-
-## 💾 Jeu de Données
-
-- **Nom du fichier** : `WA_Fn-UseC_-HR-Employee-Attrition.csv`
-- **Taille** : 1470 employés, 35 variables
-- **Variable cible** : `Attrition` (Yes / No)
-
-### 📌 Colonnes importantes
-- `Age`
-- `MonthlyIncome`
-- `JobRole`
-- `YearsAtCompany`
-- `OverTime`
-- `JobLevel`
+### ✅ Phase 4 : Analyse d'Association (Apriori)
+* **But :** Identifier les "Micro-climats de satisfaction".
+* **Résultat :** Extraction de 3 550 règles d'association.
+* **Insight clé :** La satisfaction maximale est fortement liée à la synergie entre le `JobLevel_2` et le département `Sales`, ainsi qu'à l'implication en `R&D`.
 
 ---
 
-## 🚀 État d’Avancement du Projet
+## 🏆 Benchmark des Modèles
 
-### ✅ Phase 1 : Structuration des Données
-
-Conformément aux bonnes pratiques en **Data Engineering**, les étapes suivantes ont été réalisées :
-
-#### 🔹 Nettoyage
-- Suppression des colonnes constantes :
-  - `EmployeeCount`
-  - `Over18`
-  - `StandardHours`
-- Suppression des colonnes non pertinentes
-
-#### 🔹 Prétraitement
-- Gestion des valeurs manquantes
-- Suppression des doublons
-
-#### 🔹 Feature Engineering
-- Création de la variable `Revenu_Annuel`
-- Encodage numérique de la variable `Attrition`
-
-#### 🔹 Gestion des Outliers
-- Détection et filtrage des valeurs aberrantes du salaire
-- Méthode utilisée : **IQR (Interquartile Range)**
+| Modèle | Objectif | R² | MAPE | Status |
+| :--- | :--- | :---: | :---: | :--- |
+| **Régression Simple** | Baseline / Pédagogie | 0.49 | 39.5% | ❌ Rejeté |
+| **Régression Multiple** | Prédiction Individuelle | **0.87** | **20.1%** | ✅ Retenu |
+| **ARIMA** | Tendance de Carrière | N/A | **10.8%** | 📈 Analytique |
 
 ---
 
-## 📊 Phase 2 : Visualisation des Données (Data Visualization)
+## 🛠️ Technologies Utilisées
 
-### 📈 Visualisations avec Matplotlib
-- **Histogramme** : Distribution des âges  
-  _(Population majoritairement Junior–Senior)_
-- **Diagramme en barres** : Répartition des employés par département  
-  _(Dominance du département R&D)_
-- **Scatter plot avec régression** : Corrélation entre l’expérience et le revenu
-- **Graphique 3D** : Analyse combinée _(Âge, Ancienneté, Revenu)_
-
----
-
-### 🎨 Visualisations Avancées avec Seaborn
-
-#### 🔹 Scatterplot multivarié
-- Identification des profils à risque de départ
-- Départs concentrés chez :
-  - Les jeunes employés
-  - Les bas salaires
-
-#### 🔹 Lineplot
-- Analyse de l’équité salariale entre :
-  - Hommes
-  - Femmes
-
-#### 🔹 Relplot (Faceting)
-Comparaison des dynamiques salariales par :
-- Département
-- Niveau hiérarchique (`JobLevel`)
+* **Langage :** Python 3.13
+* **Analyse :** Pandas, NumPy
+* **Visualisation :** Matplotlib, Seaborn
+* **Machine Learning :** Scikit-Learn (Régression), Statsmodels (ARIMA)
+* **Data Mining :** Mlxtend (Apriori)
+* **Déploiement :** Streamlit (Interface GUI en cours)
 
 ---
 
-## 📊 Insights Clés (Résultats Préliminaires)
+## 🧭 La "Boussole du Bien-être" (Insights Apriori)
 
-### 🔹 Profil des départs
-Les employés les plus susceptibles de quitter l’entreprise sont :
-- Jeunes
-- Ayant une faible ancienneté
-- Avec un salaire inférieur à la moyenne
-
-### 🔹 Salaire
-- La progression salariale dépend fortement du **JobLevel**
-- L’ancienneté seule n’explique pas significativement le salaire
-
-### 🔹 Genre
-- Aucune disparité salariale significative observée entre hommes et femmes
+Grâce à l'algorithme Apriori, nous avons classé les facteurs les plus influents sur la satisfaction :
+1. **Bon Environnement de travail** (Facteur présent dans 80% des profils "Heureux")
+2. **Équilibre Vie Pro/Perso**
+3. **Absence d'Heures Supplémentaires**
 
 ---
 
-## 🔜 Prochaines Étapes (Roadmap)
+## 🔜 Prochaines Étapes
 
-Le projet évoluera vers l’implémentation de modèles de **Machine Learning**, répartis en trois axes :
-
-### 🔹 Classification – Prédiction de l’Attrition
-        **Aprentissage supervisé**
-K-NN (K-Nearest Neighbors)
-Naïve Bayes
-Decision Tree (Arbre de décision)
-Random Forest
-SVM (Support Vector Machine)
-Régression Logistique
-### 🔹 Clustering – Segmentation des Employés
-        **Apprentissage non supervisé**
-- K-Means
-- Clustering Hiérarchique
-
-### 🔹 Régression – Prédiction du Salaire
-- Régression Linéaire Simple et multiple
-- Séries Temporelles (ARIMA)
-
-### 🔹 Association
-- Apriori
----
-
-
+1. **Interface Streamlit :** Création d'un dashboard interactif permettant de simuler un salaire en temps réel via le modèle de régression multiple.
+2. **Classification :** Implémentation du modèle Random Forest pour prédire l'Attrition (départs volontaires).
+3. **Clustering :** Segmentation des employés pour identifier les profils à haut potentiel.
