@@ -1,0 +1,55 @@
+🚀 Projet Python : HR Analytics & Prédiction de Satisfaction
+Je viens de finaliser un projet complet d'analyse prédictive des ressources humaines, visant à comprendre et anticiper l’attrition et la satisfaction des employés.
+
+📊 Objectifs du projet :
+
+Analyser les données RH pour identifier les facteurs influençant l’attrition.
+
+Développer des modèles prédictifs pour anticiper les départs.
+
+Proposer des leviers d’action pour améliorer la rétention et le bien-être au travail.
+
+🔧 Méthodologie et techniques utilisées :
+
+Data Engineering : Nettoyage, transformation et enrichissement des données.
+
+Analyse Exploratoire (EDA) : Visualisations avancées (3D, multivariées, équité salariale).
+
+Modélisation :
+
+Régression linéaire multiple (précision : 87%).
+
+Clustering (K-Means & CAH) pour segmenter les profils d’employés.
+
+Classification (Random Forest, SVM, Arbre de décision, K-NN, Naive Bayes).
+
+Analyse qualitative avec l'algorithme Apriori ("Boussole du bien-être").
+
+🎯 Interface interactive développée avec Streamlit :
+J'ai conçu et déployé une interface graphique interactive permettant de :
+
+Visualiser en temps réel les résultats des modèles.
+
+Explorer les segments d'employés via des graphiques dynamiques.
+
+Tester des profils fictifs pour prédire le risque d'attrition.
+
+Consulter les facteurs clés de satisfaction et de rétention.
+
+📈 Principaux résultats :
+
+Identification de 3 segments d’employés (Juniors, Confirmés, Direction).
+
+Détection des facteurs clés d’attrition : heures supplémentaires, satisfaction au travail, salaire.
+
+Développement d’un moteur de scoring du bien-être basé sur des règles métier.
+
+Modèle retenu : Random Forest (Accuracy : 86,5%, Précision : 78%).
+
+🔗 Découvrez le code, le rapport complet et l'interface Streamlit sur GitHub :
+👉 https://github.com/Sad-Y-25/HR-360---Le-Cycle-de-Vie-Pr-dictif-de-l-Employ-
+
+Ce projet m’a permis de renforcer mes compétences en Machine Learning, Data Visualisation, Développement d'interfaces interactives et Analyse Prédictive, tout en abordant des enjeux RH concrets.
+
+#DataScience #MachineLearning #HRanalytics #Python #Streamlit #DataVisualization #PredictiveAnalytics #Dashboard #Projet #GitHub #LinkedInLearning
+
